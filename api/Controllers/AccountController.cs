@@ -34,12 +34,7 @@ namespace api.Controllers
         [HttpPost("register")]
         [AllowAnonymous]
         public async Task<IActionResult> Register([FromBody] RegisterRequestDto registerDto)
-        {
-            // if (!ModelState.IsValid)
-            // {
-            //     return BadRequest(ModelState);
-            // }
-
+        {         
             if (string.IsNullOrWhiteSpace(registerDto.Email) || string.IsNullOrWhiteSpace(registerDto.Password))
             {
                 return BadRequest("Email and password are required.");
